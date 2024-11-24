@@ -28,7 +28,8 @@ const scaffoldConfig = {
   // it has no effect if you only target the local network (default is 4000)
   pollingInterval: 30000,
 
-  // You can get your Alchemy's default API key at https://dashboard.alchemyapi.io
+  // This is ours Alchemy's default API key.
+  // You can get your own at https://dashboard.alchemyapi.io
   // It's recommended to store it in an env variable:
   // .env.local for local testing, and in the Vercel/system env config for live apps.
   alchemyApiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY || "",
@@ -40,7 +41,7 @@ const scaffoldConfig = {
   walletConnectProjectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || "3a8170812b534d0ff9d794f19a901d64",
 
   // Only show the Burner Wallet when running on hardhat network
-  onlyLocalBurnerWallet: true,
+  onlyLocalBurnerWallet: false,
 } as const satisfies ScaffoldConfig;
 
 export default scaffoldConfig;
