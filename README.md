@@ -30,3 +30,14 @@ Se desplegaron los siguientes contratos en la red **Sepolia**:
 
 ---
 
+## Solución al Error de CORS y Configuración de Alchemy
+
+Durante el desarrollo, surgió un error de CORS debido a que en mi caso me conectaba a un RPC público de Sepolia (rpc.sepolia.org), que tiene restricciones y no permite conexiones directas desde localhost. Para resolver esto, se migra a un proveedor profesional, Alchemy, que ofrece una línea RPC privada y dedicada.
+
+Los RPC públicos como el de Sepolia son gratuitos, pero tienen limitaciones (como el error de CORS desde localhost). Usar un RPC profesional como el de Alchemy garantiza estabilidad y accesibilidad sin restricciones.
+
+```mermaid
+graph TD
+    A[Desarrollo Local] --> B[Usa .env.local]
+    C[Producción/Vercel] --> D[Usa Variables de Entorno de Vercel]
+    E[Git Repository] --> F[No contiene .env.local]
